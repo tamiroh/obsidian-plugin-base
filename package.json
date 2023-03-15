@@ -13,6 +13,9 @@
 		"*": [
 			"npx prettier --write",
 			"eslint --fix"
+		],
+		"*.ts": [
+			"tsc --noEmit"
 		]
 	},
 	"keywords": [],
