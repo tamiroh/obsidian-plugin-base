@@ -15,7 +15,7 @@
 			"eslint --fix"
 		],
 		"*.ts": [
-			"tsc --noEmit"
+			"npx tsc --noEmit"
 		]
 	},
 	"keywords": [],
