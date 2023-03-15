@@ -11,8 +11,10 @@
 	},
 	"lint-staged": {
 		"*": [
-			"npx prettier --write",
-			"eslint --fix"
+			"npx prettier --write"
+		],
+		"*.{js,ts}": [
+			"npx eslint --fix"
 		],
 		"*.ts": [
 			"npx tsc --noEmit"
@@ -27,6 +29,10 @@
 		"@typescript-eslint/parser": "5.29.0",
 		"builtin-modules": "3.3.0",
 		"esbuild": "0.17.3",
+		"eslint": "^8.36.0",
+		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-config-prettier": "^8.7.0",
+		"eslint-plugin-import": "^2.27.5",
 		"husky": "^8.0.3",
 		"lint-staged": "^13.2.0",
 		"obsidian": "latest",
