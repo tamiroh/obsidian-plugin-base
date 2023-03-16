@@ -5,6 +5,7 @@
 		"noUncheckedIndexedAccess": true,
 		"exactOptionalPropertyTypes": true,
 		"noImplicitOverride": true,
+		"noImplicitReturns": true,
 		"inlineSourceMap": true,
 		"inlineSources": true,
 		"module": "ESNext",

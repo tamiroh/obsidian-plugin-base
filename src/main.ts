@@ -37,7 +37,7 @@ export default class MyPlugin extends Plugin {
 		this.addCommand({
 			id: "open-sample-modal-complex",
 			name: "Open sample modal (complex)",
-			checkCallback: (checking: boolean) => {
+			checkCallback: (checking: boolean): boolean | void => {
 				// Conditions to check
 				const markdownView =
 					this.app.workspace.getActiveViewOfType(MarkdownView);
