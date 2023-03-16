@@ -19,6 +19,18 @@ const DEFAULT_SETTINGS: MyPluginSettings = {
 	mySetting: "default",
 };
 
+class SampleModal extends Modal {
+	onOpen() {
+		const { contentEl } = this;
+		contentEl.setText("Woah!");
+	}
+
+	onClose() {
+		const { contentEl } = this;
+		contentEl.empty();
+	}
+}
+
 export default class MyPlugin extends Plugin {
 	settings: MyPluginSettings;
 
@@ -94,34 +106,15 @@ export default class MyPlugin extends Plugin {
 		);
 	}
 
-	onunload() {}
-
 	async loadSettings() {
-		this.settings = Object.assign(
-			{},
-			DEFAULT_SETTINGS,
-			await this.loadData()
-		);
+		this.settings = {
+			...DEFAULT_SETTINGS,
+			...(await this.loadData()),
+		};
 	}
 
 	async saveSettings() {
 		await this.saveData(this.settings);
-	}
-}
-
-class SampleModal extends Modal {
-	constructor(app: App) {
-		super(app);
-	}
-
-	onOpen() {
-		const { contentEl } = this;
-		contentEl.setText("Woah!");
-	}
-
-	onClose() {
-		const { contentEl } = this;
-		contentEl.empty();
 	}
 }
 
@@ -148,7 +141,7 @@ class SampleSettingTab extends PluginSettingTab {
 					.setPlaceholder("Enter your secret")
 					.setValue(this.plugin.settings.mySetting)
 					.onChange(async (value) => {
-						console.log("Secret: " + value);
+						console.log(`Secret: ${value}`);
 						this.plugin.settings.mySetting = value;
 						await this.plugin.saveSettings();
 					})
