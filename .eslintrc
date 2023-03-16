@@ -22,6 +22,7 @@
 		"import/prefer-default-export": "off",
 		"import/no-unresolved": "off",
 		"import/extensions": "off",
-		"consistent-return": "off"
+		"consistent-return": "off",
+		"no-console": "off"
 	}
 }
