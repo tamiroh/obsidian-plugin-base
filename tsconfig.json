@@ -15,7 +15,8 @@
 		"noFallthroughCasesInSwitch": true,
 		"strict": true,
 		"strictPropertyInitialization": false,
-		"noUncheckedIndexedAccess": true
+		"noUncheckedIndexedAccess": true,
+		"exactOptionalPropertyTypes": true
 	},
 	"include": ["**/*.ts"]
 }
