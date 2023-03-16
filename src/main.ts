@@ -10,7 +10,7 @@ const DEFAULT_SETTINGS: Settings = {
 export default class MyPlugin extends Plugin {
 	settings: Settings;
 
-	async onload() {
+	override async onload() {
 		await this.loadSettings();
 		this.addRibbonIcon("dice", "Sample Plugin", () => {
 			new Notice("This is a notice!");
