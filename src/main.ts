@@ -17,19 +17,20 @@ export default class MyPlugin extends Plugin {
 
 	async onload() {
 		await this.loadSettings();
-
 		this.addRibbonIcon("dice", "Sample Plugin", () => {
 			new Notice("This is a notice!");
 		});
-
 		this.addStatusBarItem().setText("Status Bar Text");
+		this.addCommands();
+		this.addSettingTab(new SampleSettingTab(this.app, this));
+	}
 
+	addCommands() {
 		this.addCommand({
 			id: "open-sample-modal-simple",
 			name: "Open sample modal (simple)",
 			callback: () => new SampleModal(this.app).open(),
 		});
-
 		this.addCommand({
 			id: "sample-editor-command",
 			name: "Sample editor command",
@@ -38,7 +39,6 @@ export default class MyPlugin extends Plugin {
 				editor.replaceSelection("Sample Editor Command");
 			},
 		});
-
 		this.addCommand({
 			id: "open-sample-modal-complex",
 			name: "Open sample modal (complex)",
@@ -58,8 +58,6 @@ export default class MyPlugin extends Plugin {
 				}
 			},
 		});
-
-		this.addSettingTab(new SampleSettingTab(this.app, this));
 	}
 
 	async loadSettings() {
