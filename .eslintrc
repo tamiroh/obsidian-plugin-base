@@ -19,6 +19,8 @@
 		"@typescript-eslint/ban-ts-comment": "off",
 		"no-prototype-builtins": "off",
 		"no-new": "off",
-		"import/prefer-default-export": "off"
+		"import/prefer-default-export": "off",
+		"import/no-unresolved": "off",
+		"import/extensions": "off"
 	}
 }
