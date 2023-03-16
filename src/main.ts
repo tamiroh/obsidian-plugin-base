@@ -2,10 +2,7 @@ import { Editor, MarkdownView, Notice, Plugin } from "obsidian";
 import { SampleSettingTab } from "./sampleSettingTab";
 import { SampleModal } from "./sampleModal";
 import { Settings } from "./types/Settings";
-
-const DEFAULT_SETTINGS: Settings = {
-	mySetting: "default",
-};
+import { DEFAULT_SETTINGS } from "./constants";
 
 export default class MyPlugin extends Plugin {
 	settings: Settings;
